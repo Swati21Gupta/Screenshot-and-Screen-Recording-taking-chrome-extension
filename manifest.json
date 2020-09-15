@@ -1,0 +1,22 @@
+{    
+  "name": "Screenshot and Screen Recording Extension",        
+  "manifest_version": 2,     
+  "version": "1.0",     
+  "description": "Save web page screenshots and screen recordings files by one click",
+  "background" : {
+    "scripts" : ["background.js"]
+    },
+  "content_scripts": [     
+   {     
+      "js": ["content.js"],
+      "matches" : ["<all_urls>"]                
+   }
+
+  ],     
+  "browser_action": {   
+      "default_icon": "camera.png",
+      "default_title": "Screenshot or Screen Recording of this page",
+      "default_popup": "popup.html"
+  },     
+  "permissions": ["activeTab","declarativeContent","contextMenus", "tabs", "<all_urls>", "desktopCapture"] 
+}
